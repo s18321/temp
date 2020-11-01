@@ -11,10 +11,10 @@ namespace ConsoleApp1
         public static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var url = @"https://www.pja.edu.pl";
+            //var url = @"https://www.pja.edu.pl"; for testing purposes
             using (var httpClient = new HttpClient()) // var assignes the variable as right
             {
-                using (var response = await httpClient.GetAsync(url))
+                using (var response = await httpClient.GetAsync(args[0]))
                 {
 
                     var content = await response.Content.ReadAsStringAsync();
