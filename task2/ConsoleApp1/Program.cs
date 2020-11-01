@@ -3,7 +3,6 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-
 namespace ConsoleApp1
 {
     public class Program
@@ -16,17 +15,11 @@ namespace ConsoleApp1
             {
                 using (var response = await httpClient.GetAsync(args[0]))
                 {
-
                     var content = await response.Content.ReadAsStringAsync();
-
-
-
 
                     var regex = new Regex("[a-z]+[a-z0-9]*@[a-z]+\\.[a-z]+", RegexOptions.IgnoreCase);
 
                     var matches = regex.Matches(content); //Match only find one occurence and matches find more of them
-
-
 
                     foreach (var match in matches)
                     {
